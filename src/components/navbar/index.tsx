@@ -1,5 +1,4 @@
 import { BiSearchAlt } from "react-icons/bi";
-import { Searchbox } from "./searchbox";
 import { useRootContext } from "../../context/root_contex";
 
 export const Navbar = () => {

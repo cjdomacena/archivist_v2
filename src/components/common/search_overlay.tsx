@@ -1,71 +1,9 @@
-import { AiFillInfoCircle, AiOutlineQuestion, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SEARCH_FILTER_DIRECTION, SEARCH_FILTER_ORDER, SEARCH_FILTER_UNIQUE, SEARCH_ORDER_OPTIONS } from "../../utils/constants";
 import { Searchbox } from "../navbar/searchbox";
 import Select from "../select";
 import { Tooltip } from "./tooltip";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRootContext } from "../../context/root_contex";
-
-
-const filters = [{
-    defaultValue: "cards",
-    placeholder: "unique",
-    label: "searchbox-unique",
-    options: [{
-        value: "cards",
-    },
-    {
-        value: "art",
-    },
-    {
-        value: "prints",
-    }
-    ],
-    optionLabel: { label: "Unique", tip: "The unique parameter specifies if Scryfall should remove “duplicate” results in your query." }
-},
-{
-    defaultValue: "order",
-    placeholder: "Sort",
-    label: "searchbox-unique",
-    options: [{
-        value: "name",
-    },
-    {
-        value: "set",
-    },
-    {
-        value: "released",
-    },
-    {
-        value: "rarity",
-    }, {
-        value: "color",
-    }, {
-        value: "usd",
-    }, {
-        value: "tix",
-    },
-    {
-        value: "cmc",
-    }, {
-        value: "power",
-    }, {
-        value: "toughness",
-    }, {
-        value: "edhrec",
-    }, {
-        value: "penny",
-    },
-    {
-        value: "artist",
-    },
-    {
-        value: "review",
-    },
-    ],
-    optionLabel: { label: "Unique", tip: "The unique parameter specifies if Scryfall should remove “duplicate” results in your query." }
-}
-];
 
 export default function SearchOverlay() {
 

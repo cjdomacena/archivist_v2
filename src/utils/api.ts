@@ -1,7 +1,6 @@
-import axios, { AxiosError } from "axios";
-import { BASE_URL, SEARCH_ORDER_OPTIONS } from "./constants";
 import { CardSearchResponse } from "../types/cards";
 import { Symbology } from "../types/symbology";
+import { BASE_URL, SEARCH_ORDER_OPTIONS } from "./constants";
 
 export interface SearchParams {
   unique?: "cards" | "art" | "prints"; // Should remove duplicate in results, by default "cards" is selected,

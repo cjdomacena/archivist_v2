@@ -1,11 +1,10 @@
-import { ChangeEvent, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
-import { BiLoaderAlt, BiSearchAlt, BiX } from 'react-icons/bi';
-import * as _ from 'lodash';
 import { useQuery } from '@tanstack/react-query';
-import { SearchParams, getSearchResults } from '../../utils/api';
-import { SearchResults } from './search_results';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { BiLoaderAlt, BiSearchAlt, BiX } from 'react-icons/bi';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { SearchParams, getSearchResults } from '../../utils/api';
 import { Badge } from '../common/badge';
+import { SearchResults } from './search_results';
 
 
 

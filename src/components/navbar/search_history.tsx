@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, forwardRef, useEffect, useId, useState } from "react";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { forwardRef, useEffect, useId, useState } from "react";
 import { BiX } from "react-icons/bi";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface SearchHistoryProps {
     setQ: (str: string) => void;
