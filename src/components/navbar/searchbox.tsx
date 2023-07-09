@@ -63,12 +63,10 @@ export const Searchbox = (props: SearchParams) => {
             <input ref={inputRef}
                 id='searchbox' className="w-full appearance-none bg-transparent focus:outline-none focus:border-none px-2 py-4 text-neutral-300" placeholder="Search" value={q}
                 onChange={(e) => {
-                    if (e.currentTarget.value !== "/") setQ(e.currentTarget.value);
-                }}
-                onFocus={() => {
                     if (q.length >= 2) {
                         setShowResults(true);
                     }
+                    if (e.currentTarget.value !== "/") setQ(e.currentTarget.value);
                 }}
                 autoFocus
             />
