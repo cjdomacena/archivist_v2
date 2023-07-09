@@ -21,9 +21,26 @@ export function useLocalStorage(key: string,
             const val = getValue();
             if (!val.includes(newVal)) {
                 val.push(newVal);
+            } else {
+                const removeIdx = val.indexOf(newVal);
+                val.splice(removeIdx, 1);
+                val.push(newVal);
             }
-            window.localStorage.setItem(key, JSON.stringify(val));
+            const reversedVal = val.reverse();
+            window.localStorage.setItem(key, JSON.stringify(reversedVal));
         }
     };
-    return { getValue, setValue };
+
+    const removeValue = (valToRemove: string) => {
+        if (typeof window !== 'undefined') {
+            const val = getValue();
+            if (val.includes(valToRemove)) {
+                const removeIdx = val.indexOf(valToRemove);
+                val.splice(removeIdx, 1);
+            }
+            window.localStorage.setItem(key, JSON.stringify(val));
+            window.dispatchEvent(new Event("storage"));
+        }
+    };
+    return { getValue, setValue, removeValue };
 }

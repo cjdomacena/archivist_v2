@@ -1,9 +1,9 @@
 import axios, { AxiosError } from "axios";
 import { BASE_URL, SEARCH_ORDER_OPTIONS } from "./constants";
 import { CardSearchResponse } from "../types/cards";
-import { checkPropertyExists } from "./helpers";
+import { Symbology } from "../types/symbology";
 
-interface SearchParams {
+export interface SearchParams {
   unique?: "cards" | "art" | "prints"; // Should remove duplicate in results, by default "cards" is selected,
   order?: keyof typeof SEARCH_ORDER_OPTIONS;
   dir?: "auto" | "asc" | "desc";
@@ -43,8 +43,24 @@ export const getSearchResults = async (
       const result = await d.json();
       return result;
     } catch (e) {
-      return null;
+      console.log(e);
     }
+  }
+  return null;
+};
+
+export interface GetSymbologyResponse {
+  data: Symbology[];
+  object: string;
+  has_more: boolean;
+}
+export const getSymbology = async (): Promise<GetSymbologyResponse | null> => {
+  try {
+    const d = await fetch(`${BASE_URL}/symbology`);
+    const result: GetSymbologyResponse = await d.json();
+    return result;
+  } catch (error) {
+    console.log(error);
   }
   return null;
 };
