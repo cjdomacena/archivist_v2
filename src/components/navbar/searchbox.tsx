@@ -74,13 +74,13 @@ export const Searchbox = (props: SearchParams) => {
         {result && isFetched && showResults ? <SearchResults ref={resultsRef} cards={result.data?.slice(0, Math.min(5, result.total_cards))} max={result.total_cards} /> : null}
         {history.length > 0 ? <div className='p-2 text-xs text-neutral-400 gap-2 space-y-2'>
             <p>Recently searched </p>
-            <ul className='flex gap-2 items-center'>
-                {history.map((val) => <li className='text-neutral-200 flex' key={`history-${val}`}>
+            <ul className='flex flex-wrap gap-2'>
+                {history.map((val) => <li className='text-neutral-200 whitespace-nowrap flex' key={`history-${val}`}>
 
                     <button onClick={() => setQ(val)}><Badge className='flex items-center rounded-l hover:bg-neutral-800'>{val}</Badge></button>
                     <button className='bg-neutral-700 border-l border-l-neutral-600 rounded-r px-0.5 hover:bg-red-500' onClick={() => removeValue(val)}><BiX className="w-4 h-4" /></button>
                 </li>)}
             </ul>
-        </div> : <div className='h-[38px] mt-2' />}
+        </div> : null}
     </div>;
 };
