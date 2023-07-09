@@ -28,6 +28,7 @@ export function useLocalStorage(key: string,
             }
             const reversedVal = val.reverse();
             window.localStorage.setItem(key, JSON.stringify(reversedVal));
+            window.dispatchEvent(new Event("storage"));
         }
     };
 
