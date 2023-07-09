@@ -1,7 +1,7 @@
+import { BiCopyright } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { CardResponse } from "../../types/cards";
 import { checkPropertyExists } from "../../utils/helpers";
-import { BiCopyright } from "react-icons/bi";
 import { SymbolBadge } from "../common/symbols";
 
 export const SearchResultItem = (card: CardResponse) => {

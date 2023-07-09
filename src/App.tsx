@@ -1,7 +1,6 @@
-import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import HomePage from './pages/Home';
 import RootLayout from './pages/Root';
-import SearchOverlay from './components/common/search_overlay';
 
 function App() {
 
