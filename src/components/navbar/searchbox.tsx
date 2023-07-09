@@ -65,8 +65,12 @@ export const Searchbox = (props: SearchParams) => {
                 onChange={(e) => {
                     if (e.currentTarget.value !== "/") setQ(e.currentTarget.value);
                 }}
+                onFocus={() => {
+                    if (q.length >= 2) {
+                        setShowResults(true);
+                    }
+                }}
                 autoFocus
-
             />
         </div>
         {result && isFetched && showResults ? <SearchResults ref={resultsRef} cards={result.data?.slice(0, Math.min(5, result.total_cards))} max={result.total_cards} /> : null}
