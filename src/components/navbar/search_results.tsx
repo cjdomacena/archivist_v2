@@ -14,8 +14,8 @@ export const SearchResults = forwardRef<HTMLDivElement, SearchResultsProps>(({ c
                 {cards.map((card,) =>
                     <SearchResultItem key={card.id}  {...card} />
                 )}
-            </ul> : <div>
-                No results found.
+            </ul> : <div className="p-4 text-center">
+                No results found
             </div>}
             {max > 5 ? <button className="w-full border-t border-t-neutral-800 text-sm px-4 py-2 hover:bg-neutral-800  text-center">Show all results</button> : null}
         </div>

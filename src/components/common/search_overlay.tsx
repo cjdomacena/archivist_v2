@@ -18,15 +18,15 @@ export default function SearchOverlay() {
         setOrder(SEARCH_FILTER_ORDER.defaultValue);
         setDir(SEARCH_FILTER_DIRECTION.defaultValue);
     };
-    const handleMouseUp = useCallback((e: MouseEvent) => {
-        if (!containerRef.current?.contains(e.target as Node)) {
-            setIsSearchOpen(false);
-        }
-    }, []);
-    useEffect(() => {
-        document.addEventListener("mouseup", handleMouseUp);
-        return () => document.removeEventListener("mouseup", handleMouseUp);
-    }, []);
+    // const handleMouseUp = useCallback((e: MouseEvent) => {
+    //     if (!containerRef.current?.contains(e.target as Node)) {
+    //         setIsSearchOpen(true);
+    //     }
+    // }, []);
+    // useEffect(() => {
+    //     document.addEventListener("mouseup", handleMouseUp);
+    //     return () => document.removeEventListener("mouseup", handleMouseUp);
+    // }, []);
 
     return <div className="absolute top-0 left-0 w-screen h-screen overflow-hidden flex justify-center bg-neutral-900/60 backdrop-blur-sm" >
         <div className=" p-12 mt-12">
